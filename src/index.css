@@ -1,13 +1,129 @@
-body {
+/* IMPORTS______________________________________________________________________________________________________ */
+/* VARIABLES______________________________________________________________________________________________________ */
+/* COLORS: 
+Main linear gradient -> linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.75)
+  )
+
+Search input background color (not focus) -> rgba(255, 255, 255, 0.5)
+Search input background color (when focus) -> rgba(255, 255, 255, 0.75)
+Search input box shadow  -> 0px 5px rgb(0 0 0 / 20%)
+Search input text color -> #313131
+Div location text color -> #fff
+Div location text shadow -> 3px 3px rgb(50 50 70 / 50%)
+Div date text shadow -> 2px 2px rgb(50 50 70 / 50%)
+Div date text color -> #fff
+Div temp background color -> rgba(255, 255, 255, 0.2)
+Div temp color -> #fff
+Div temp box shadow -> 3px 6px rgb(0 0 0 / 20%)
+Div temp text shadow -> 3px 6px rgb(50 50 70 / 50%)
+Div cloud color -> #fff
+Div cloud text shadow -> 3px 3px rgb(50 50 70 / 50%)
+*/
+/* RESETS______________________________________________________________________________________________________ */
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* MIXINS______________________________________________________________________________________________________ */
+/* STYLES______________________________________________________________________________________________________ */
+.search-div {
+  margin-bottom: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
+.search-div input {
+  width: 100%;
+  max-width: 687px;
+  padding: 1rem;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #313131;
+  -webkit-box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.search-div input:focus {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* STYLES______________________________________________________________________________________________________ */
+.weather-div {
+  text-align: center;
+}
+
+.weather-div__placedate__place h1 {
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+.weather-div__placedate__date p {
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.weather-div__tempclouds__temp {
+  display: inline-block;
+  margin: 2.5rem 0;
+  padding: 2rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  font-size: 5rem;
+  font-weight: 700;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  -webkit-box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-div__tempclouds__clouds {
+  font-size: 2.5rem;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  font-weight: 700;
+}
+
+/* STYLES______________________________________________________________________________________________________ */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
+main {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.App {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.75))), url("./images/cold-bg.jpg") bottom;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)), url("./images/cold-bg.jpg") bottom;
+  background-size: cover;
+}
+
+.App.warm {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.75))), url("./images/warm-bg.jpg") bottom;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)), url("./images/warm-bg.jpg") bottom;
+  background-size: cover;
+}
+/*# sourceMappingURL=index.css.map */

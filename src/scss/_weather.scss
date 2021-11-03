@@ -1,0 +1,43 @@
+/* STYLES______________________________________________________________________________________________________ */
+.weather-div {
+  text-align: center;
+
+  &__placedate {
+    &__place {
+      & h1 {
+        text-shadow: $location-shadow;
+        font-weight: 100;
+        font-size: 3rem;
+      }
+    }
+
+    &__date {
+      & p {
+        text-shadow: $date-shadow;
+        font-style: italic;
+        font-size: 1.2rem;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  &__tempclouds {
+    &__temp {
+      display: inline-block;
+      margin: 2.5rem 0;
+      padding: 2rem 1rem;
+      background-color: $temp-bg;
+      border-radius: 15px;
+      font-size: 5rem;
+      font-weight: 700;
+      text-shadow: $temp-text-shadow;
+      box-shadow: $temp-box-shadow;
+    }
+
+    &__clouds {
+      font-size: 2.5rem;
+      text-shadow: $cloud-text-shadow;
+      font-weight: 700;
+    }
+  }
+}

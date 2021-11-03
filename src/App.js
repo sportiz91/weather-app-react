@@ -1,23 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  //SO FUCKING IMPORTANT TO ADD THE HTTPS:// BEFORE THE API ENDPOINT, IF NOT, THE GET REQUEST WON'T PROCEED AND YOU'LL GET A SUPER ANOYING ERROR!
+  const API = {
+    key: "301b5f15b0dff4ce071c9b0c4b69b6ea",
+    base: "https://api.openweathermap.org/data/2.5/weather",
+  };
+
+  const [query, setQuery] = useState("");
+  const [weatherObject, setWeatherObject] = useState(""); // we initialize weather object to a "" in order to ask later if it's empty or not.
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key == "Enter") {
+      let getRequest = `${API.base}?appid=${API.key}&q=${query}&units=metric`;
+
+      async function req() {
+        const res = await fetch(getRequest);
+        const response = await res.json();
+        console.log(response);
+        setWeatherObject(response);
+      }
+
+      req();
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <div className="search-div">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search..."
+            onChange={handleChange}
+            onKeyPress={handleKeyPress}
+            value={query}
+          ></input>
+        </div>
+
+        {typeof weatherObject.name != "undefined" ? (
+          <div className="weather-div">
+            <div className="weather-div__placedate">
+              <div className="weather-div__placedate__place">
+                <h1>
+                  {weatherObject.name}, {weatherObject.sys.country}
+                </h1>
+              </div>
+              <div className="weather-div__placedate__date">
+                <p> Wednesday 3 November 2021 </p>
+              </div>
+            </div>
+            <div className="weather-div__tempclouds">
+              <div className="weather-div__tempclouds__temp">
+                <p>{Math.round(weatherObject.main.temp)}º C</p>
+              </div>
+              <div className="weather-div__tempclouds__clouds">
+                <p>{weatherObject.weather[0].main}</p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </main>
     </div>
   );
 }
