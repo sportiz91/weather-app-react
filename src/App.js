@@ -5,7 +5,7 @@ function App() {
 
   //SO FUCKING IMPORTANT TO ADD THE HTTPS:// BEFORE THE API ENDPOINT, IF NOT, THE GET REQUEST WON'T PROCEED AND YOU'LL GET A SUPER ANOYING ERROR!
   const API = {
-    key: process.env.REACT_APP_API_KEY,
+    key: apiKey,
     base: "https://api.openweathermap.org/data/2.5/weather",
   };
 
@@ -18,7 +18,7 @@ function App() {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       let getRequest = `${API.base}?appid=${API.key}&q=${query}&units=metric`;
 
       async function req() {
