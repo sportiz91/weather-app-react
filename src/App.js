@@ -5,7 +5,7 @@ function App() {
 
   //SO FUCKING IMPORTANT TO ADD THE HTTPS:// BEFORE THE API ENDPOINT, IF NOT, THE GET REQUEST WON'T PROCEED AND YOU'LL GET A SUPER ANOYING ERROR!
   const API = {
-    key: apiKey,
+    key: "301b5f15b0dff4ce071c9b0c4b69b6ea",
     base: "https://api.openweathermap.org/data/2.5/weather",
   };
 
