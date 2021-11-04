@@ -9,6 +9,7 @@ function App() {
 
   const [query, setQuery] = useState("");
   const [weatherObject, setWeatherObject] = useState(""); // we initialize weather object to a "" in order to ask later if it's empty or not.
+  const [today, setToday] = useState("");
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -26,6 +27,16 @@ function App() {
       }
 
       req();
+
+      const date = new Date();
+      setToday(
+        date.toLocaleString("en-US", {
+          weekday: "long",
+          day: "numeric",
+          year: "numeric",
+          month: "long",
+        })
+      );
     }
   };
 
@@ -52,7 +63,7 @@ function App() {
                 </h1>
               </div>
               <div className="weather-div__placedate__date">
-                <p> Wednesday 3 November 2021 </p>
+                <p> {today} </p>
               </div>
             </div>
             <div className="weather-div__tempclouds">
