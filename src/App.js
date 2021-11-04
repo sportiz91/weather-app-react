@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 function App() {
-  const apiKey = process.env.REACT_APP_API_KEY;
-
   //SO FUCKING IMPORTANT TO ADD THE HTTPS:// BEFORE THE API ENDPOINT, IF NOT, THE GET REQUEST WON'T PROCEED AND YOU'LL GET A SUPER ANOYING ERROR!
   const API = {
     key: "301b5f15b0dff4ce071c9b0c4b69b6ea",

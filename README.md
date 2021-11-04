@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Weather App - Create-React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Third App done using React. In this case, we use create-react-app and weather API. The goal of the project was to practice my react skills + hitting API.
 
-## Available Scripts
+# Table of Contents
 
-In the project directory, you can run:
+- [Quick Start](#quick-start)
+- [Next Steps](#next-steps)
+- [Learnings](#learnings)
+- [Special Thanks](#special-thanks)
 
-### `npm start`
+# Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Init a new repo: `git init`
+1. Clone the repo: `git clone https://github.com/sportiz91/weather-app-react.git`
+1. CD over `weather-app-react` folder.
+1. Install dependencies with npm: `npm install`
+1. Run it locally on your machine: `npm start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Next Steps
 
-### `npm test`
+Nothings, everything's done :)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Learnings
 
-### `npm run build`
+- More practice into create-react-app & basic hooks.
+- Hitting an API from the Client.
+- Set up SASS with create-react-app (no real difference compared to a normal App).
+- Using ENV variables in create-react-app. Basically React has the dotenv packaged incorporated, so you have to create an .ENV file, and add your enviorment variables there. The name of the variables must start with `REACT_APP_...=...`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Specific Learnings
+  1. When deploying to Vercel, there must not be warnings, if there are warnings, deployment will fail. You have two options here
+     - Clear all those warnings in your code
+     - Go to your project setting in vercel.com -> Go to General -> In the "Build & Development Settings", override the Build command and write `CI='' npm run build`. Special thanks to this stackoverflow: [Link](https://stackoverflow.com/questions/66840942/vercel-deployment-error-command-npm-run-build-exited-with-1).
+  1. SO FUCKING IMPORTANT TO ADD THE HTTPS:// BEFORE THE API ENDPOINT, IF NOT, THE GET REQUEST WON'T PROCEED AND YOU'LL GET A SUPER ANOYING ERROR!
+  1. You can initialize state to an empty "" and then override it to have an object.
+  1. If you want to ask if a variable is undefined (not created) you should do -> `typeof nameOfVariable == "undefined" ? ... : ...`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Special Thanks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was possible thanks to [Tyler Potts](https://www.youtube.com/c/TylerPotts) YouTube Channel.
